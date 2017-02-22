@@ -1,0 +1,118 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+
+}
+body {	
+	background-color: #ccc;
+	display: -ms-flexbox;
+	display: flex;
+/*	background: radial-gradient(circle,
+	rgba(255, 255, 255,.45) 5%,
+	rgba(255, 255, 255,.25) 15%,
+	rgba(255, 255, 255,.05) 50%);*/
+}
+.authorization {
+	width: 520px;
+	background-color: #fff;
+	margin: auto;
+	box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.05);
+}
+.authorization header {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.authorization div {
+	height: 300px;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+.authorization div p {
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+	line-height: 25px;
+	margin: 0;
+}
+#phone,
+#smscode {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 16px;
+	line-height: 50px;
+	letter-spacing: 3px;
+	text-align: center;
+	color: #666;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	margin-bottom: 13px;
+	width: 225px;
+}
+#smscode,
+#signinbutton,
+.descrcode {
+	display: none;
+}
+.button {
+	cursor: pointer;
+	font: 15px/50px 'Roboto', sans-serif;
+	font-weight: 600;
+	color: #fff;
+	width: 225px;
+	height: 60px;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	margin-bottom: 13px;
+}
+.nosms,
+.error {
+	display: none;
+}
+.error {
+	font: 13px/20px 'Roboto', sans-serif;
+	color: red;
+	font-weight: 600;
+	text-align: center;
+}
+
+.authorization footer {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-ms-flex-align: center;
+	align-items: center;
+}
+header img {
+	margin: 50px 0;
+}
+header p {
+	font-family: 'Roboto', sans-serif;
+	font-size: 31px;
+	line-height: 35px;
+	font-weight: bold;
+	margin: 0;
+}
+footer > p {
+	font-family: 'Roboto', sans-serif;
+	font-size: 13px;
+	line-height: 20px;
+	margin: 50px 0 0 0;
+}
+footer p + p {
+	font-family: 'Roboto', sans-serif;
+	font-size: 17px;
+	font-weight: bold;
+	line-height: 24px;
+	margin: 0 0 30px 0;
+}

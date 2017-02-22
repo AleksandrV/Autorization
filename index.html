@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400" rel="stylesheet">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<script src="script/jquery.inputmask.bundle.js"></script>
+
+</head>
+<body>
+
+	<section class="authorization">
+		<header>
+			<img src="img/logo.png" alt="logo">
+			<p>Добро пожаловать</p>
+		</header>
+		<div>
+			<p class="descrnumber">Ваш номер телефона</p>
+			<input id="phone" name="phone" placeholder="+380(__)___-__-__" type="text" autofocus>
+			<input id="sendbutton" type="button" class="button" value="Отправить код на телефон">
+			<p class="descrcode">Код из смс для входа</p>
+			<input id="smscode" name="smscode" placeholder="___-___" type="text">
+			<input id="signinbutton" type="button" class="button" value="Войти">
+			<p class="nosms">Не приходит смс? Заказать звонок</p>
+			<p class="error">Превышен лимит авторизаций,<br />попробуйте позже или свяжитесь с менеджером</p>
+   				<script type="text/javascript">
+			    	$(document).ready(
+			    		function(){
+							$('#phone').inputmask({
+								"mask": "+380(99)999-99-99",
+								"oncomplete": function(){ console.log("ввод по маске успешен"); }
+							});
+
+							$('#smscode').inputmask({
+
+								"mask": "999-999", 
+								"oncomplete": function(){ off(); }, 
+								"clearIncomplete": true
+							});
+
+							$("#sendbutton").click(
+								function(){
+								$("#phone").attr('readonly','readonly');
+								$("#sendbutton").fadeOut();
+								$(".error").fadeOut();
+								$("#smscode").fadeIn();
+								$("#signinbutton").fadeIn();
+								$(".descrcode").fadeIn();
+								on();
+
+							});
+
+							$("#signinbutton").click(
+								function(){
+
+								accreditation();
+
+							});
+
+							function go() { $(".nosms").fadeIn() };
+
+							function on() { timeoutId = setTimeout(go, 15000) };
+
+							function off() { clearTimeout(timeoutId) };
+
+							function accreditation() {
+								if ( $('#smscode').inputmask().val() == "999-999") {
+									off();
+									console.log (alert ("yes"));
+								} else {
+								off();
+								$("#smscode").fadeOut();
+								$("#signinbutton").fadeOut();
+								$(".descrcode").fadeOut();
+								$(".nosms").fadeOut();
+								$("#phone").removeAttr('readonly');
+								$("#sendbutton").fadeIn();
+								$(".error").fadeIn();
+								console.log ("no");
+								}
+							}
+
+					});
+				</script>
+		</div>
+		<footer>
+			<p>Возникли сложности? Звоните:</p>
+			<p>+380 (44) 576–76–56</p>
+		</footer>
+	</section>
+</body>
+</html>
